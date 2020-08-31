@@ -1,9 +1,10 @@
 from dotenv import load_dotenv
-from os import environ
+from os import environ,path,getcwd
 from selenium.webdriver import Chrome
 import time
 
-load_dotenv('assets/.env_selenium')
+envPath = path.join(getcwd(),'assets','.env_selenium')
+load_dotenv(envPath)
 webdriverPath = environ.get('WEBDRIVER')
 webdriver = Chrome(webdriverPath)
 
